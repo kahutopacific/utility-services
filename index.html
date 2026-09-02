@@ -17,6 +17,91 @@
   img { border: 0; outline: none; text-decoration: none; }
   a { color: #1e6091; text-decoration: none; }
   a:hover { text-decoration: underline; }
+
+
+  /* ---- buttons, print, mobile ---- */
+  .kp-btn{display:inline-block;margin:0 6px 8px 0;padding:8px 14px;background-color:#0d3b4f;color:#ffffff !important;text-decoration:none !important;font-size:12px;font-weight:600;letter-spacing:.3px}
+  .kp-btn-ghost{background-color:#ffffff;color:#0d3b4f !important;border:1px solid #0d3b4f}
+  @media print{
+    body{background:#ffffff}
+    .kp-hdr-links,.kp-ft-right .kp-btn,.l2-toggle,.l2-copy{display:none !important}
+    .l2opt-preview-link img.dim{opacity:1 !important}
+    .l2opt-zoom,.l2-sample{display:none !important}
+    .l2-opt.locked{opacity:1 !important}
+    a[href]:after{content:""}
+  }
+  @media (max-width:700px){
+    .kp-pad{padding-left:16px !important;padding-right:16px !important}
+    .kp-h1{font-size:26px !important}
+    .kp-hdr-links{display:none}
+    .kp-cta-btn{display:block !important;padding:16px 0 0 !important;text-align:left !important}
+    .kp-ft-right{display:block !important;text-align:left !important;padding-top:14px}
+    .kp-steps{flex-direction:column}
+    .kp-steps:before{display:none}
+    .kp-step{padding-left:0 !important}
+  }
+
+  /* ---- how it works timeline ---- */
+  .kp-steps{display:flex;gap:18px;position:relative;list-style:none;margin:0;padding:0}
+  .kp-steps:before{content:"";position:absolute;left:24px;right:24px;top:20px;height:2px;background-color:#d9c9a8}
+  .kp-step{flex:1 1 0;position:relative;min-width:0}
+  .kp-step-dot{width:40px;height:40px;border-radius:50%;background-color:#c9692e;color:#ffffff;font-weight:bold;font-size:16px;display:flex;align-items:center;justify-content:center;position:relative;border:4px solid #ffffff;box-shadow:0 0 0 2px #d9c9a8}
+  .kp-step h3{margin:12px 0 4px;font-size:14px;font-weight:600;color:#0d3b4f}
+  .kp-step p{margin:0;font-size:12.5px;color:#555555;line-height:1.5}
+  .kp-step-time{display:inline-block;margin-top:6px;font-size:11px;font-weight:600;color:#a85525;background-color:#f5ede0;padding:2px 8px}
+
+
+  /* ---- Level 2 options (interactive) ---- */
+  .l2opt *{box-sizing:border-box}
+  .l2opt-grid{display:flex;gap:22px;align-items:flex-start}
+  .l2opt-stack{flex:0 0 300px;position:sticky;top:12px;background-color:#f5ede0;border:1px solid #d9c9a8;padding:12px 10px 6px}
+  .l2opt-stack-title{margin:0 0 8px;font-size:11px;letter-spacing:1px;font-weight:bold;color:#a85525}
+  .l2opt-preview-link{display:block;position:relative;background-color:#ffffff;border:1px solid #d9c9a8;text-decoration:none !important}
+  .l2opt-preview-link img{display:block;width:100%;height:auto;max-height:340px;object-fit:contain;transition:opacity .3s}
+  .l2opt-preview-link img.dim{opacity:.45}
+  .l2opt-zoom{position:absolute;right:8px;bottom:8px;font-size:11px;font-weight:600;color:#ffffff;background-color:rgba(13,59,79,.85);padding:4px 8px}
+  .l2opt-fineprint{margin:8px 2px 0;font-size:10.5px;color:#888888;line-height:1.4;text-align:center}
+  .l2-sample{color:#1e6091;font-weight:600}
+  .l2-lightbox{display:none;position:fixed;inset:0;background-color:rgba(13,59,79,.92);z-index:1000;align-items:center;justify-content:center;padding:24px}
+  .l2-lightbox.open{display:flex}
+  .l2-lightbox figure{margin:0;max-width:1200px;max-height:100%;display:flex;flex-direction:column;align-items:center}
+  .l2-lightbox img{max-width:100%;max-height:82vh;background-color:#ffffff;border:4px solid #ffffff}
+  .l2-lightbox figcaption{margin-top:12px;color:#ffffff;font-size:13px;text-align:center;line-height:1.5;max-width:70ch}
+  .l2-lightbox-close{position:absolute;top:14px;right:18px;background:none;border:none;color:#ffffff;font-size:36px;line-height:1;cursor:pointer}
+  .l2opt-caption{margin:6px 2px 0;font-size:12px;color:#555555;text-align:center;min-height:2.6em;line-height:1.3}
+  .l2opt-list{flex:1 1 auto;display:flex;flex-direction:column;gap:10px;min-width:0}
+  .l2-opt{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start;padding:14px 16px;border:1px solid #d9c9a8;background-color:#ffffff;transition:border-color .2s,background-color .2s}
+  .l2-opt.on{border-color:#c9692e;background-color:#fdf3e6;box-shadow:inset 3px 0 0 #c9692e}
+  .l2-opt.locked{opacity:.55}
+  .l2-swatch{display:block;width:30px;height:30px;margin-top:2px;border:1px solid #d9c9a8}
+  .l2-sw-under{background-color:#4A3B33;background-image:repeating-linear-gradient(135deg,transparent 0 5px,#E4572E 5px 7px,transparent 7px 12px,#2E86DE 12px 14px)}
+  .l2-sw-surface{background-color:#DCE1E6;background-image:radial-gradient(circle at 30% 40%,#0d3b4f 0 3px,transparent 3.5px),radial-gradient(circle at 70% 65%,#0d3b4f 0 3px,transparent 3.5px)}
+  .l2-sw-aerial{background:linear-gradient(90deg,#8DB27A 0 45%,#B7B7B7 45% 60%,#C9A27E 60% 100%)}
+  .l2-opt-title{margin:0 0 3px;font-size:15px;font-weight:600;color:#0d3b4f;line-height:1.3}
+  .l2-opt-plain{margin:0 0 6px;font-size:13px;color:#555555;line-height:1.5}
+  .l2-opt-ul{margin:0;padding:0;list-style:none;font-size:12.5px;color:#333333;line-height:1.55}
+  .l2-opt-ul li{padding-left:14px;position:relative}
+  .l2-opt-ul li:before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background-color:#c9692e}
+  .l2-opt-needs{margin:6px 0 0;font-size:11.5px;font-weight:600;color:#a85525}
+  .l2-opt-tech{margin:6px 0 0;font-size:11px;color:#888888}
+  .l2-toggle{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;border:1.5px solid #c9692e;color:#c9692e;background-color:#ffffff;padding:8px 14px;font-weight:600;font-size:12.5px;font-family:inherit;cursor:pointer;transition:background-color .2s,color .2s}
+  .l2-toggle:focus-visible{outline:3px solid #f4b860;outline-offset:2px}
+  .l2-opt.on .l2-toggle{background-color:#c9692e;color:#ffffff}
+  .l2-ico-plus,.l2-ico-tick{font-size:13px;line-height:1}
+  .l2-opt.on .l2-ico-plus,.l2-opt.on .l2-lbl-off{display:none}
+  .l2-opt:not(.on) .l2-ico-tick,.l2-opt:not(.on) .l2-lbl-on{display:none}
+  .l2-code{display:inline-block;margin-right:8px;padding:2px 7px;font-size:10.5px;letter-spacing:1px;font-weight:bold;color:#ffffff;background-color:#a85525;vertical-align:middle;position:relative;top:-1px}
+  .l2opt-select{margin-top:14px;padding:12px 16px;background-color:#f5ede0;border:1px solid #d9c9a8;display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+  .l2-copy{border:none;background-color:#0d3b4f;color:#ffffff;padding:10px 16px;font-size:12.5px;font-weight:600;font-family:inherit;cursor:pointer;white-space:nowrap;letter-spacing:.3px}
+  .l2-copy:focus-visible{outline:3px solid #f4b860;outline-offset:2px}
+  .l2-copy.done{background-color:#2e7d5b}
+  @media (max-width:760px){
+    .l2opt-grid{flex-direction:column}
+    .l2opt-stack{flex:none;width:100%;position:static}
+    .l2-opt{grid-template-columns:auto 1fr}
+    .l2-toggle{grid-column:2;justify-self:start}
+  }
+  @media (prefers-reduced-motion:reduce){.l2-opt,.l2-toggle,.l2opt-preview-link img{transition:none}}
 </style>
 </head>
 <body>
@@ -39,8 +124,10 @@
                 <td align="center" valign="middle" width="34%" style="font-size:14px;color:#ffffff;letter-spacing:3px;font-weight:600;">
                   KAHUTO PACIFIC LIMITED
                 </td>
-                <td align="right" valign="middle" width="33%" style="font-size:11px;color:#a8c5d1;letter-spacing:1px;font-weight:500;">
-          
+                <td align="right" valign="middle" width="33%" class="kp-hdr-links" style="font-size:12px;color:#a8c5d1;font-weight:500;white-space:nowrap;">
+                  <a href="tel:+6796750095" style="color:#ffffff;text-decoration:none;"></a> &nbsp;&middot;&nbsp;
+                  <a href="https://wa.me/6796750095" style="color:#ffffff;text-decoration:none;"></a> &nbsp;&middot;&nbsp;
+                  <a href="mailto:survey@kahutopacific.com" style="color:#ffffff;text-decoration:none;"></a>
                 </td>
               </tr>
             </table>
@@ -49,8 +136,8 @@
 
         <!-- HERO -->
         <tr>
-          <td style="padding:40px 32px 28px;background-color:#ffffff;">
-            <h1 style="margin:0 0 12px;font-size:32px;color:#0d3b4f;font-weight:600;line-height:1.2;">
+          <td class="kp-pad" style="padding:40px 32px 28px;background-color:#ffffff;">
+            <h1 class="kp-h1" style="margin:0 0 12px;font-size:32px;color:#0d3b4f;font-weight:600;line-height:1.2;">
               Utility Locating <em style="color:#c9692e;">Services</em>
             </h1>
             <p style="margin:0;font-size:15px;color:#555555;line-height:1.6;">
@@ -61,7 +148,7 @@
 
         <!-- TRUST BADGES -->
         <tr>
-          <td style="padding:0 32px 32px;">
+          <td class="kp-pad" style="padding:0 32px 32px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
               <tr>
                 <td width="33%" align="center" style="padding:12px;background-color:#f7f9fa;border:1px solid #e0e0e0;font-size:12px;color:#0d3b4f;font-weight:600;line-height:1.3;">
@@ -82,7 +169,7 @@
 
         <!-- INTRO -->
         <tr>
-          <td style="padding:0 32px 24px;">
+          <td class="kp-pad" style="padding:0 32px 24px;">
             <p style="margin:0;font-size:14px;color:#444444;line-height:1.7;">
               Kahuto Pacific provides <strong>subsurface utility investigation </strong> across Fiji and the Pacific using Ground Penetrating Radar and EM locating technology. Our services are structured into three clear levels, choose the one that matches your project scope and budget.
             </p>
@@ -91,14 +178,14 @@
 
         <!-- SECTION TITLE: SERVICE LEVELS -->
         <tr>
-          <td style="padding:16px 32px 20px;border-top:2px solid #0d3b4f;">
+          <td class="kp-pad" style="padding:16px 32px 20px;border-top:2px solid #0d3b4f;">
             <h2 style="margin:0;font-size:20px;color:#0d3b4f;font-weight:600;">Service Levels</h2>
           </td>
         </tr>
 
         <!-- LEVEL 1 -->
         <tr>
-          <td style="padding:0 32px 16px;">
+          <td class="kp-pad" style="padding:0 32px 16px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e0e0e0;">
               <tr>
                 <td style="background-color:#f7f9fa;padding:16px 20px;border-bottom:1px solid #e0e0e0;">
@@ -137,7 +224,7 @@
 
         <!-- LEVEL 2 -->
         <tr>
-          <td style="padding:0 32px 16px;">
+          <td class="kp-pad" style="padding:0 32px 16px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #d9c9a8;border-top:3px solid #c9692e;">
               <tr>
                 <td style="background-color:#f5ede0;padding:16px 20px;border-bottom:1px solid #d9c9a8;">
@@ -160,11 +247,90 @@
                   <table width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr><td style="padding:6px 0;font-size:13px;color:#333333;font-weight:600;"><span style="color:#c9692e;">—</span> &nbsp; Everything in Level 1</td></tr>
                     <tr><td style="padding:6px 0;font-size:13px;color:#333333;"><span style="color:#c9692e;">—</span> &nbsp; GPS-located utility pickups (FMG &amp; WGS84)</td></tr>
-                    <tr><td style="padding:6px 0;font-size:13px;color:#333333;"><span style="color:#c9692e;">—</span> &nbsp; Excel Utility Register (XLSX) — coordinates, utility type, indicative depth</td></tr>
+                    <tr><td style="padding:6px 0;font-size:13px;color:#333333;"><span style="color:#c9692e;">—</span> &nbsp; Excel Utility Register (XLSX) with coordinates, utility type, indicative depth</td></tr>
                     <tr><td style="padding:6px 0;font-size:13px;color:#333333;"><span style="color:#c9692e;">—</span> &nbsp; Basic AS 5488 quality level assignment</td></tr>
                   </table>
+                  <!-- LEVEL 2 OPTIONS (interactive) -->
+                  <div class="l2opt" style="margin-top:18px;border:1px dashed #d9c9a8;background-color:#fffbf4;padding:18px 18px 8px;">
+                    <p style="margin:0 0 4px;font-size:11px;color:#a85525;letter-spacing:2px;font-weight:bold;">LEVEL 2 OPTIONAL CAD OPTIONS</p>
+                    <p style="margin:0 0 4px;font-size:17px;color:#0d3b4f;font-weight:600;">Build your drawing, layer by layer</p>
+                    <p style="margin:0 0 8px;font-size:13px;color:#555555;line-height:1.55;max-width:70ch;">Level 2 gives you site marks and an Excel list of where every utility is. If you would also like it as a CAD drawing, start with Option A, then choose <strong>one</strong> way to add context; surveyed surface features (Option B) or an aerial photo (Option C). Tap each one to see what it adds.</p>
+                    <p style="margin:0 0 16px;font-size:12px;color:#a85525;line-height:1.5;max-width:70ch;"><strong>Tapping here doesn't send anything to us.</strong> When you've decided, copy your selection using the button at the bottom and paste it into your reply, or just quote the option letters (A, B, C).</p>
+
+                    <div class="l2opt-grid">
+                      <!-- illustration -->
+                      <div class="l2opt-stack">
+                        <p class="l2opt-stack-title" id="l2-preview-title">Real deliverable preview</p>
+                        <a href="#" class="l2opt-preview-link" id="l2-preview-link" title="Tap to enlarge">
+                          <img id="l2-preview" src="img/option-a-sample.png" alt="Sample utility drawing" class="dim">
+                          <span class="l2opt-zoom">&#8599; Enlarge</span>
+                        </a>
+                        <p class="l2opt-caption" id="l2-caption">Tap an option to preview a real drawing from a recent job.</p>
+                        <p class="l2opt-fineprint">Extracts from real deliverables on recent jobs. Client details removed.</p>
+                      </div>
+
+                      <!-- options -->
+                      <div class="l2opt-list">
+                        <div class="l2-opt" data-layer="under">
+                          <span class="l2-swatch l2-sw-under"></span>
+                          <div>
+                            <p class="l2-opt-title"><span class="l2-code">Option A</span>Draw what's underground</p>
+                            <p class="l2-opt-plain">Turn the Excel list into a proper drawing. Every pipe and cable we found is drawn as a line, colour-coded by type, with its approximate depth written on it.</p>
+                            <ul class="l2-opt-ul">
+                              <li>A drawing file your engineer or draftsperson can open (DWG / DXF)</li>
+                              <li>Fiji Map Grid, plus a WGS84 copy for Google Earth</li>
+                              <li>No background &mdash; just the utilities</li>
+                            </ul>
+                            <p class="l2-opt-tech">Technical name: CAD Pickups Export&nbsp;&middot;&nbsp;<a href="#" class="l2-sample" data-sample="a">See a real sample &rsaquo;</a></p>
+                          </div>
+                          <button class="l2-toggle" type="button" aria-pressed="false"><span class="l2-ico-plus">+</span><span class="l2-ico-tick">&#10003;</span><span class="l2-lbl-off">Add this</span><span class="l2-lbl-on">Added</span></button>
+                        </div>
+
+                        <div class="l2-opt locked" data-layer="surface" data-needs="under">
+                          <span class="l2-swatch l2-sw-surface"></span>
+                          <div>
+                            <p class="l2-opt-title"><span class="l2-code">Option B</span>Add what's on the surface</p>
+                            <p class="l2-opt-plain">We survey the things you can see &mdash; manholes, pits, poles, valve boxes, kerbs and building edges &mdash; as points and lines your draftsperson can snap to.</p>
+                            <ul class="l2-opt-ul">
+                              <li>Done on the same site visit, so no extra callout</li>
+                              <li>Shows how underground services connect to what's above</li>
+                              <li>Best for design work and small sites, driveways and compounds</li>
+                            </ul>
+                            <p class="l2-opt-needs">Needs Option A &middot; choose B <em>or</em> C</p>
+                            <p class="l2-opt-tech">Technical name: Surface Features Pickup&nbsp;&middot;&nbsp;<a href="#" class="l2-sample" data-sample="b">See a real sample &rsaquo;</a></p>
+                          </div>
+                          <button class="l2-toggle" type="button" aria-pressed="false"><span class="l2-ico-plus">+</span><span class="l2-ico-tick">&#10003;</span><span class="l2-lbl-off">Add this</span><span class="l2-lbl-on">Added</span></button>
+                        </div>
+
+                        <div class="l2-opt locked" data-layer="aerial" data-needs="under">
+                          <span class="l2-swatch l2-sw-aerial"></span>
+                          <div>
+                            <p class="l2-opt-title"><span class="l2-code">Option C</span>Add an aerial photo of your site</p>
+                            <p class="l2-opt-plain">We fly a drone over the site and draw the utilities on top of a sharp, to-scale aerial photo. The photo itself provides the context &mdash; buildings, roads, fences &mdash; so no separate surface survey is needed.</p>
+                            <ul class="l2-opt-ul">
+                              <li>High-resolution photo of the whole site (GeoTIFF, JPEG, PDF)</li>
+                              <li>A drawing sheet with the utilities drawn over the photo</li>
+                              <li>Best for larger sites and anyone who wants the picture &mdash; priced by site size</li>
+                            </ul>
+                            <p class="l2-opt-needs">Needs Option A &middot; choose B <em>or</em> C</p>
+                            <p class="l2-opt-tech">Technical name: Drone Orthophoto Basemap&nbsp;&middot;&nbsp;<a href="#" class="l2-sample" data-sample="c">See a real sample &rsaquo;</a></p>
+                          </div>
+                          <button class="l2-toggle" type="button" aria-pressed="false"><span class="l2-ico-plus">+</span><span class="l2-ico-tick">&#10003;</span><span class="l2-lbl-off">Add this</span><span class="l2-lbl-on">Added</span></button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="l2opt-select">
+                      <div>
+                        <p style="margin:0 0 2px;font-size:11px;color:#a85525;letter-spacing:1px;font-weight:bold;">YOUR SELECTION</p>
+                        <p id="l2-selection" style="margin:0;font-size:13px;color:#333333;line-height:1.5;">Level 2 &mdash; no CAD options selected</p>
+                      </div>
+                      <button class="l2-copy" id="l2-copy" type="button">Copy selection</button>
+                    </div>
+                    <p style="margin:8px 0 0;font-size:11px;color:#777777;line-height:1.5;">Paste this into your reply so we can quote exactly what you need.</p>
+                  </div>
                   <p style="margin:14px 0 0;padding:12px;background-color:#faf5eb;font-size:12px;color:#555555;border-left:3px solid #c9692e;line-height:1.5;">
-                    <strong style="color:#0d3b4f;">Best for:</strong> Clients who need recorded utility positions for site records, GIS upload, or design coordination — without committing to a full processed survey.
+                    <strong style="color:#0d3b4f;">Best for:</strong> Clients who need recorded utility positions for site records, GIS upload, or design coordination — with an optional drawing and basemap when you need one, without committing to a full processed survey.
                   </p>
                 </td>
               </tr>
@@ -174,7 +340,7 @@
 
         <!-- LEVEL 3 -->
         <tr>
-          <td style="padding:0 32px 28px;">
+          <td class="kp-pad" style="padding:0 32px 28px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:2px solid #0d3b4f;">
               <tr>
                 <td style="background-color:#0d3b4f;padding:16px 20px;">
@@ -217,14 +383,14 @@
 
         <!-- OPTIONAL ADD-ONS -->
         <tr>
-          <td style="padding:16px 32px 12px;border-top:2px solid #0d3b4f;">
+          <td class="kp-pad" style="padding:16px 32px 12px;border-top:2px solid #0d3b4f;">
             <h2 style="margin:0;font-size:20px;color:#0d3b4f;font-weight:600;">Optional Add-Ons</h2>
-            <p style="margin:6px 0 0;font-size:11px;color:#777777;letter-spacing:1px;">AVAILABLE WITH ANY SERVICE LEVEL</p>
+            <p style="margin:6px 0 0;font-size:11px;color:#777777;letter-spacing:1px;">ADD TO YOUR CHOSEN SERVICE LEVEL</p>
           </td>
         </tr>
 
         <tr>
-          <td style="padding:0 32px 16px;">
+          <td class="kp-pad" style="padding:0 32px 16px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e0e0e0;background-color:#fffbf4;">
               <tr>
                 <td style="padding:18px 20px;">
@@ -245,15 +411,16 @@
         </tr>
 
         <tr>
-          <td style="padding:0 32px 28px;">
+          <td class="kp-pad" style="padding:0 32px 28px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e0e0e0;background-color:#fffbf4;">
               <tr>
                 <td style="padding:18px 20px;">
                   <p style="margin:0 0 6px;font-size:11px;color:#c9692e;letter-spacing:2px;font-weight:bold;">OPTIONAL ADD-ON</p>
-                  <p style="margin:0 0 10px;font-size:16px;color:#0d3b4f;font-weight:600;">Drone Photogrammetry + Utility Overlay</p>
+                  <p style="margin:0 0 10px;font-size:16px;color:#0d3b4f;font-weight:600;">Drone Orthophoto Basemap</p>
                   <p style="margin:0;font-size:13px;color:#444444;line-height:1.6;">
-                    We fly the DJI M3E, process an orthophoto, and overlay all utility pickups in CAD. Deliverables: GeoTIFF, JPEG, PDF, ECW + CAD drawing with utility overlay (DWG/PDF). Priced by site area — request when enquiring.
+                    We fly the DJI M3E, process a to-scale orthophoto tied to the same survey control as your utility pickups, and draw the utilities over it in CAD &mdash; the photo provides the site context, so no separate surface-feature survey is included. Deliverables: GeoTIFF, JPEG, PDF, ECW + CAD drawing with utility overlay (DWG/PDF). Priced by site area — request when enquiring.
                   </p>
+                  <p style="margin:10px 0 0;font-size:12px;color:#a85525;font-weight:600;">Available with Level 2 (with the Option A) and Level 3.</p>
                 </td>
               </tr>
             </table>
@@ -262,13 +429,13 @@
 
         <!-- COMPARISON TABLE -->
         <tr>
-          <td style="padding:16px 32px 20px;border-top:2px solid #0d3b4f;">
+          <td class="kp-pad" style="padding:16px 32px 20px;border-top:2px solid #0d3b4f;">
             <h2 style="margin:0;font-size:20px;color:#0d3b4f;font-weight:600;">Quick Comparison</h2>
           </td>
         </tr>
 
         <tr>
-          <td style="padding:0 32px 28px;">
+          <td class="kp-pad" style="padding:0 32px 28px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e0e0e0;">
               <tr style="background-color:#0d3b4f;color:#ffffff;">
                 <th align="left" style="padding:10px 12px;font-size:12px;font-weight:600;color:#ffffff;">Deliverable</th>
@@ -307,50 +474,62 @@
                 <td align="center" style="padding:10px 8px;font-size:11px;color:#0d3b4f;font-weight:bold;border-bottom:1px solid #e0e0e0;">Full</td>
               </tr>
               <tr style="background-color:#f7f9fa;">
+                <td style="padding:10px 12px;font-size:12px;border-bottom:1px solid #e0e0e0;">Option A &mdash; CAD drawing of utility pickups (DXF/DWG)</td>
+                <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
+                <td align="center" style="padding:10px 8px;font-size:10px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">Optional</td>
+                <td align="center" style="padding:10px 8px;font-size:14px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">✓</td>
+              </tr>
+              <tr style="background-color:#ffffff;">
+                <td style="padding:10px 12px;font-size:12px;border-bottom:1px solid #e0e0e0;">Option B &mdash; Surface features pickup (choose B or C)</td>
+                <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
+                <td align="center" style="padding:10px 8px;font-size:10px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">Optional</td>
+                <td align="center" style="padding:10px 8px;font-size:14px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">✓</td>
+              </tr>
+              <tr style="background-color:#f7f9fa;">
+                <td style="padding:10px 12px;font-size:12px;border-bottom:1px solid #e0e0e0;">Option C &mdash; Drone orthophoto basemap + utility overlay (choose B or C)</td>
+                <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
+                <td align="center" style="padding:10px 8px;font-size:10px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">Optional</td>
+                <td align="center" style="padding:10px 8px;font-size:10px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">Optional</td>
+              </tr>
+              <tr style="background-color:#ffffff;">
                 <td style="padding:10px 12px;font-size:12px;border-bottom:1px solid #e0e0e0;">Radargram profiles (JPEG/PNG/TIFF)</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">✓</td>
               </tr>
-              <tr style="background-color:#ffffff;">
+              <tr style="background-color:#f7f9fa;">
                 <td style="padding:10px 12px;font-size:12px;border-bottom:1px solid #e0e0e0;">IQMaps feature pickups — FMG &amp; WGS84/UTM 60S (DXF)</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">✓</td>
               </tr>
-              <tr style="background-color:#f7f9fa;">
+              <tr style="background-color:#ffffff;">
                 <td style="padding:10px 12px;font-size:12px;border-bottom:1px solid #e0e0e0;">Survey report</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:11px;color:#0d3b4f;font-weight:bold;border-bottom:1px solid #e0e0e0;">Full</td>
               </tr>
-              <tr style="background-color:#ffffff;">
+              <tr style="background-color:#f7f9fa;">
                 <td style="padding:10px 12px;font-size:12px;border-bottom:1px solid #e0e0e0;">Combined surface + subsurface CAD plans (DXF/DWG/PDF)</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">✓</td>
               </tr>
-              <tr style="background-color:#f7f9fa;">
+              <tr style="background-color:#ffffff;">
                 <td style="padding:10px 12px;font-size:12px;border-bottom:1px solid #e0e0e0;">GIS deliverables (ESRI SHP, KML/KMZ)</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">✓</td>
               </tr>
-              <tr style="background-color:#ffffff;">
+              <tr style="background-color:#f7f9fa;">
                 <td style="padding:10px 12px;font-size:12px;border-bottom:1px solid #e0e0e0;">Deliverable Guide &amp; Full QA/QC checklist (PDF)</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;border-bottom:1px solid #e0e0e0;">—</td>
                 <td align="center" style="padding:10px 8px;font-size:14px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">✓</td>
               </tr>
-              <tr style="background-color:#f7f9fa;">
-                <td style="padding:10px 12px;font-size:12px;border-bottom:1px solid #e0e0e0;">Potholing / NDD verification (QL-A)</td>
-                <td align="center" style="padding:10px 8px;font-size:10px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">Optional</td>
-                <td align="center" style="padding:10px 8px;font-size:10px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">Optional</td>
-                <td align="center" style="padding:10px 8px;font-size:10px;color:#c9692e;font-weight:bold;border-bottom:1px solid #e0e0e0;">Optional</td>
-              </tr>
               <tr style="background-color:#ffffff;">
-                <td style="padding:10px 12px;font-size:12px;">Drone photogrammetry + utility overlay</td>
-                <td align="center" style="padding:10px 8px;font-size:14px;color:#bbbbbb;">—</td>
+                <td style="padding:10px 12px;font-size:12px;">Potholing / NDD verification (QL-A)</td>
+                <td align="center" style="padding:10px 8px;font-size:10px;color:#c9692e;font-weight:bold;">Optional</td>
                 <td align="center" style="padding:10px 8px;font-size:10px;color:#c9692e;font-weight:bold;">Optional</td>
                 <td align="center" style="padding:10px 8px;font-size:10px;color:#c9692e;font-weight:bold;">Optional</td>
               </tr>
@@ -360,7 +539,7 @@
 
         <!-- CTA -->
         <tr>
-          <td style="padding:0 32px 32px;">
+          <td class="kp-pad" style="padding:0 32px 32px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#0d3b4f;">
               <tr>
                 <td style="padding:28px 24px;">
@@ -372,7 +551,7 @@
                           Draw your site boundary on our interactive map. We use it to prepare an accurate, itemised proposal — delivered within 24 hours.
                         </p>
                       </td>
-                      <td align="right" valign="middle" style="padding-left:20px;">
+                      <td align="right" valign="middle" class="kp-cta-btn" style="padding-left:20px;">
                         <a href="https://kahutopacific.github.io/Survey-Area-Definer/" style="background-color:#c9692e;color:#ffffff;padding:14px 22px;font-size:13px;font-weight:600;text-decoration:none;display:inline-block;letter-spacing:0.5px;">
                           Define Your Survey Area &rsaquo;
                         </a>
@@ -380,7 +559,7 @@
                     </tr>
                   </table>
                   <p style="margin:14px 0 0;font-size:11px;color:#a8c5d1;letter-spacing:1px;">
-                    DRAW YOUR AREA · EXPORT KML · REPLY WITH ATTACHMENT
+                    DRAW YOUR AREA · EXPORT KML · EMAIL IT TO US
                   </p>
                 </td>
               </tr>
@@ -388,56 +567,40 @@
           </td>
         </tr>
 
-        <!-- NEXT STEPS -->
+        <!-- HOW IT WORKS -->
         <tr>
-          <td style="padding:16px 32px 20px;border-top:2px solid #0d3b4f;">
-            <h2 style="margin:0;font-size:20px;color:#0d3b4f;font-weight:600;">Next Steps</h2>
+          <td class="kp-pad" style="padding:16px 32px 20px;border-top:2px solid #0d3b4f;">
+            <h2 style="margin:0;font-size:20px;color:#0d3b4f;font-weight:600;">How it works</h2>
           </td>
         </tr>
-
         <tr>
-          <td style="padding:0 32px 32px;">
-            <table width="100%" cellpadding="0" cellspacing="0" border="0">
-              <tr>
-                <td style="padding:12px 0;border-bottom:1px solid #e0e0e0;">
-                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                      <td width="40" valign="top" style="font-size:24px;font-weight:bold;color:#c9692e;">1</td>
-                      <td valign="top">
-                        <p style="margin:0;font-size:14px;font-weight:600;color:#0d3b4f;">Choose your service level</p>
-                        <p style="margin:4px 0 0;font-size:13px;color:#555555;">Reply letting us know which level (L1, L2 or L3) suits your project.</p>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:12px 0;border-bottom:1px solid #e0e0e0;">
-                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                      <td width="40" valign="top" style="font-size:24px;font-weight:bold;color:#c9692e;">2</td>
-                      <td valign="top">
-                        <p style="margin:0;font-size:14px;font-weight:600;color:#0d3b4f;">Define your survey area</p>
-                        <p style="margin:4px 0 0;font-size:13px;color:#555555;">Use the button above to draw your site and export a KML file. Attach it to your reply.</p>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:12px 0;">
-                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                      <td width="40" valign="top" style="font-size:24px;font-weight:bold;color:#c9692e;">3</td>
-                      <td valign="top">
-                        <p style="margin:0;font-size:14px;font-weight:600;color:#0d3b4f;">Receive your quote</p>
-                        <p style="margin:4px 0 0;font-size:13px;color:#555555;">We'll review your requirements and send a detailed cost proposal within 24 hours.</p>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
+          <td class="kp-pad" style="padding:0 32px 32px;">
+            <ol class="kp-steps">
+              <li class="kp-step">
+                <div class="kp-step-dot">1</div>
+                <h3>Tell us what you need</h3>
+                <p>Pick your level (L1, L2 or L3) and any Level 2 CAD options, draw your site on the <a href="https://kahutopacific.github.io/Survey-Area-Definer/">Survey Area Definer</a>, and email us the KML.</p>
+                <span class="kp-step-time">5 minutes</span>
+              </li>
+              <li class="kp-step">
+                <div class="kp-step-dot">2</div>
+                <h3>Get your quote</h3>
+                <p>We review the site and send an itemised proposal &mdash; scope, field days, deliverables and price.</p>
+                <span class="kp-step-time">Within 24 hours</span>
+              </li>
+              <li class="kp-step">
+                <div class="kp-step-dot">3</div>
+                <h3>We survey your site</h3>
+                <p>Our crew scans with GPR and EM, marks everything detected on the ground, and records GPS pickups if you're on L2 or L3.</p>
+                <span class="kp-step-time">Marks on the ground the same day</span>
+              </li>
+              <li class="kp-step">
+                <div class="kp-step-dot">4</div>
+                <h3>Receive your deliverables</h3>
+                <p>From a photo report (L1) to Excel and CAD (L2) to a fully processed design package (L3), reviewed and signed off by our certified utility locator.</p>
+                <span class="kp-step-time">Per your proposal</span>
+              </li>
+            </ol>
           </td>
         </tr>
 
@@ -452,8 +615,11 @@
                   Tel +679 675 0095<br>
                   Email <a href="mailto:survey@kahutopacific.com" style="color:#1e6091;">survey@kahutopacific.com</a>
                 </td>
-                <td align="right" valign="top" style="font-size:12px;color:#555555;line-height:1.7;">
-                  Questions? Just reply to this email.<br>
+                <td align="right" valign="top" class="kp-ft-right" style="font-size:12px;color:#555555;line-height:1.7;">
+                  <a href="tel:+6796750095" class="kp-btn">Call us</a>
+                  <a href="https://wa.me/6796750095" class="kp-btn">WhatsApp</a>
+                  <a href="mailto:survey@kahutopacific.com?subject=Utility%20locating%20enquiry" class="kp-btn">Email us</a>
+                  <a href="#" class="kp-btn kp-btn-ghost" onclick="window.print();return false;">Save as PDF</a><br>
                   <a href="https://kahutopacific.com" style="color:#1e6091;">kahutopacific.com</a>
                 </td>
               </tr>
@@ -463,9 +629,9 @@
 
         <!-- DISCLAIMER -->
         <tr>
-          <td style="padding:18px 32px;background-color:#ffffff;border-top:1px solid #e0e0e0;">
+          <td class="kp-pad" style="padding:18px 32px;background-color:#ffffff;border-top:1px solid #e0e0e0;">
             <p style="margin:0;font-size:10px;color:#999999;line-height:1.5;text-align:center;">
-              You are receiving this because you enquired about utility locating services. This message contains confidential information intended for the named recipient.
+              &copy; Kahuto Pacific Limited. Service inclusions on this page are indicative; your written proposal is the confirmed scope. Utility detection is subject to ground conditions and the limits of GPR and EM methods.
             </p>
           </td>
         </tr>
@@ -476,6 +642,92 @@
     </td>
   </tr>
 </table>
+
+
+<div class="l2-lightbox" id="l2-lightbox" role="dialog" aria-modal="true" aria-label="Sample drawing">
+  <button class="l2-lightbox-close" id="l2-lightbox-close" type="button" aria-label="Close">&times;</button>
+  <figure>
+    <img id="l2-lightbox-img" src="" alt="Sample utility drawing">
+    <figcaption id="l2-lightbox-cap"></figcaption>
+  </figure>
+</div>
+<script>
+(function(){
+  var root = document.querySelector('.l2opt'); if(!root) return;
+  var opts = Array.prototype.slice.call(root.querySelectorAll('.l2-opt'));
+  var captions = {
+    none:'Tap an option to preview a real drawing from a recent job.',
+    under:'A clean drawing of every buried service, colour-coded and labelled with depth.',
+    surface:'Underground utilities plus surveyed manholes, poles and kerbs to snap to.',
+    aerial:'Your utilities drawn over a to-scale aerial photo of the site.'
+  };
+  var labels = { under:'Option A \u2013 Draw what\'s underground (CAD pickups export)', surface:'Option B \u2013 Surface features pickup', aerial:'Option C \u2013 Drone orthophoto basemap' };
+  var selText = 'Level 2 \u2014 no CAD options selected';
+  var samples = {
+    under:  { src:'img/option-a-sample.png', title:'Option A \u2014 Draw what\'s underground', cap:'Utility pickups drawn as colour-coded lines with depth labels \u2014 no basemap. Extract from a resort survey, Mamanuca Islands, 2026.' },
+    surface:{ src:'img/option-b-sample.png', title:'Option B \u2014 With surface features', cap:'Utilities plus surveyed chambers, transformer buildings and boundary. Extract from a resort services compound survey, Nadi area, 2026.' },
+    aerial: { src:'img/option-c-sample.jpg', title:'Option C \u2014 Over an aerial photo', cap:'Utilities, chambers and levels drawn over a drone orthophoto. Extract from a road corridor survey, Nadi, 2026.' }
+  };
+  var current = 'under';
+  function showSample(key, dim){
+    var sm = samples[key]; current = key;
+    var img = root.querySelector('#l2-preview'); img.src = sm.src; img.alt = sm.title;
+    img.classList.toggle('dim', !!dim);
+    root.querySelector('#l2-preview-title').textContent = dim ? 'Real deliverable preview' : sm.title;
+  }
+  function isOn(l){ var o=root.querySelector('.l2-opt[data-layer="'+l+'"]'); return o && o.classList.contains('on'); }
+  function render(){
+    var chosen=[];
+    opts.forEach(function(o){
+      var layer=o.getAttribute('data-layer'), needs=o.getAttribute('data-needs');
+      o.classList.toggle('locked', !!(needs && !isOn(needs)));
+      o.querySelector('.l2-toggle').setAttribute('aria-pressed', o.classList.contains('on'));
+      if(o.classList.contains('on')) chosen.push(layer);
+    });
+    var sOn=chosen.indexOf('surface')>-1, aOn=chosen.indexOf('aerial')>-1;
+    if(aOn) showSample('aerial'); else if(sOn) showSample('surface'); else if(chosen.indexOf('under')>-1) showSample('under'); else showSample('under', true);
+    var cap = chosen.indexOf('aerial')>-1 ? captions.aerial : chosen.indexOf('surface')>-1 ? captions.surface : chosen.indexOf('under')>-1 ? captions.under : captions.none;
+    root.querySelector('#l2-caption').textContent = cap;
+    var order=['under','surface','aerial'];
+    var picked=order.filter(function(k){return chosen.indexOf(k)>-1;}).map(function(k){return labels[k];});
+    selText = picked.length ? 'Level 2 (Site Clearance + GPS Pickups) with CAD options: ' + picked.join(' + ') : 'Level 2 \u2014 no CAD options selected';
+    root.querySelector('#l2-selection').textContent = selText;
+  }
+  opts.forEach(function(o){
+    o.querySelector('.l2-toggle').addEventListener('click', function(){
+      var layer=o.getAttribute('data-layer'), needs=o.getAttribute('data-needs');
+      if(o.classList.contains('on')){
+        o.classList.remove('on');
+        if(layer==='under'){ opts.forEach(function(x){ if(x.getAttribute('data-needs')==='under') x.classList.remove('on'); }); }
+      } else {
+        if(needs){ root.querySelector('.l2-opt[data-layer="'+needs+'"]').classList.add('on'); }
+        if(layer==='surface'||layer==='aerial'){ var other = layer==='surface' ? 'aerial' : 'surface'; root.querySelector('.l2-opt[data-layer="'+other+'"]').classList.remove('on'); }
+        o.classList.add('on');
+      }
+      render();
+    });
+  });
+  // lightbox
+  var lb=document.getElementById('l2-lightbox'), lbImg=document.getElementById('l2-lightbox-img'), lbCap=document.getElementById('l2-lightbox-cap');
+  function openLb(key){ var sm=samples[key]; lbImg.src=sm.src; lbImg.alt=sm.title; lbCap.textContent=sm.title+'. '+sm.cap; lb.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+  root.querySelector('#l2-preview-link').addEventListener('click', function(e){ e.preventDefault(); openLb(current); });
+  Array.prototype.forEach.call(root.querySelectorAll('.l2-sample'), function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); var k={a:'under',b:'surface',c:'aerial'}[a.getAttribute('data-sample')]; openLb(k); });
+  });
+  document.getElementById('l2-lightbox-close').addEventListener('click', closeLb);
+  lb.addEventListener('click', function(e){ if(e.target===lb) closeLb(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLb(); });
+  var copyBtn=root.querySelector('#l2-copy');
+  copyBtn.addEventListener('click', function(){
+    var text='Service level: '+selText;
+    function ok(){ copyBtn.textContent='Copied \u2713'; copyBtn.classList.add('done'); setTimeout(function(){copyBtn.textContent='Copy selection';copyBtn.classList.remove('done');},2000); }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, function(){ fallback(); }); } else { fallback(); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy'); ok();}catch(e){ window.prompt('Copy your selection:', text); } document.body.removeChild(ta); }
+  });
+  render();
+})();
+</script>
 
 </body>
 </html>
